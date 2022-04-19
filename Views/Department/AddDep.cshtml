@@ -1,0 +1,14 @@
+﻿@model EmployeeManagementSystem.Models.Department
+@{
+    ViewData["Title"] = "AddDep";
+}
+
+<h1>AddDep</h1>
+
+<form class="form-group my-5" method="post">
+
+    @Html.LabelFor(x=>x.DepName)
+    @Html.TextBoxFor(x=>x.DepName,   new {@class="form-control"})
+
+    <button class="btn btn-primary">Add Department</button>
+</form>

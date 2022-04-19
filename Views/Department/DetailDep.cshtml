@@ -1,0 +1,26 @@
+﻿@model EmployeeManagementSystem.Models.Department
+@{
+    ViewData["Title"] = "DetailDep";
+}
+
+<h1>DetailDep</h1>
+
+<form class="form-group my-5" asp-action="UpdateDep" method="post">
+    @Html.LabelFor(x=>x.DepId)
+    @Html.TextBoxFor(x=>x.DepId,new {@class="form-control my-5"})
+    @Html.LabelFor(x=>x.DepName)
+    @Html.TextBoxFor(x=>x.DepName,new {@class="form-control my-5"})
+
+    <button class="btn btn-dark">Update Department</button>
+</form>
+@*
+İki farklı yöntem ile asp attr. yardımıyla form tagları ile / razor ve model attr. yardımı ile
+@using (Html.BeginForm("UpdateDep","Dep", FormMethod.Post)) 
+{
+    @Html.LabelFor(x=>x.DepId)
+    @Html.TextBoxFor(x=>x.DepId,new {@class="form-control my-5"})
+    @Html.LabelFor(x=>x.DepName)
+    @Html.TextBoxFor(x=>x.DepName,new {@class="form-control my-5"})
+    
+    <button class="btn btn-dark">Update Department</button>
+}*@

@@ -1,0 +1,17 @@
+﻿@model EmployeeManagementSystem.Models.Personnel
+@{
+    ViewData["Title"] = "DetailPers";
+}
+
+<h1>DetailPers</h1>
+
+<form class="form-group my-5" asp-action="UpdatePers" method="post">
+    @Html.LabelFor(x=>x.PersId)
+    @Html.TextBoxFor(x=>x.PersId,new {@class="form-control"})
+    @Html.LabelFor(x=>x.PersName)
+    @Html.TextBoxFor(x=>x.PersName,new {@class="form-control"})
+    @Html.LabelFor(x=>x.DepId)
+    @Html.DropDownListFor(x=>x.DepId, (List<SelectListItem>)ViewBag.departments, new {@class="form-control"})
+
+    <button class="btn btn-dark">Update Personnel</button>
+</form>

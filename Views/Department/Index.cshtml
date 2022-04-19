@@ -1,0 +1,31 @@
+﻿@using EmployeeManagementSystem.Models
+@model List<Department>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<table class="table table-bordered my-5" >
+    <tr>
+        <th>ID</th>
+        <th>DEPARTMENT</th>
+        <th>DELETE</th>
+        <th>UPDATE</th>
+        <th>DETAIL</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+    <tr>
+        <td>@x.DepId</td>
+        <td>@x.DepName</td>
+        <th><a href="/Department/RemoveDep/@x.DepId" class="btn btn-danger">Delete</a></th>
+        <th><a href="/Department/DetailDep/@x.DepId" class="btn btn-success">Update</a></th>
+        <th><a href="/Department/PersonnelDep/@x.DepId" class="btn btn-warning">Detail</a></th>
+    </tr>   
+    }
+</table>
+
+<a href="/Department/AddDep" class="btn btn-primary">New Department</a>
+
+
